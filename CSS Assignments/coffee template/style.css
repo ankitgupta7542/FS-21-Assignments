@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.container{
+    height: 100vh;
+   border: 1px solid red;
+}
+.white{
+    background-color: rgb(255, 255, 255);
+    height: 200px;
+}
+
+.yellow{
+    display: flex;
+    justify-content: space-around;
+    /* height: 450px; */
+    background-color: rgb(248, 212, 10);
+}
+.coffee-img{
+    width: 50%;
+}
+.quotes{
+    padding: 5rem;
+    width: 40%;
+    text-align: center;
+}
+.coffee-img img{
+    position: relative;
+    left: 10rem;
+    bottom: 5rem;
+    width: 60%;
+}
+.quotes h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+.quotes  p , a{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+.quotes button{
+    width: 40%;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #000;
+    color: #FFF;
+    font-size: 18px;
+    border: transparent;
+}
+
+
+
+med
