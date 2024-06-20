@@ -11,3 +11,5 @@ This project is a simplified clone of the Amazon website, focusing on replicatin
 
 ## 🌄Screenshots
 
+
+![Amazon-clone-ss](https://github.com/ankitgupta7542/FS-21-Assignments/assets/155214925/fb76b7ac-47f6-476c-a9ac-5a260f261614)
