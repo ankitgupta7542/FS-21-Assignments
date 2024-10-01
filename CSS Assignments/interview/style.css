@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container{
+    padding: 2rem;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+nav ul{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+nav ul li{
+    list-style: none;
+    font-weight: bold;
+}
+.nav-icons{
+    display: flex;
+    gap: 10px;
+}
+.hero{
+    display: flex;
+    justify-content: space-arround;
+    padding: 3rem;
+}
+.hero-left{
+    padding: 2rem;
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+
+}
+.hero-left h1{
+    font-size: 2rem;
+}
+.hero-left button{
+    padding: 1.5rem;
+    background-color: #2c2724;
+    color: #fff;
+    margin-top: 2rem;
+    border-radius: 20px;
+}
+.hero-right{
+    width: 45%;
+    
+}
+.right-big{
+    background-color:#f3eae5 ;
+    padding: 2rem;
+    border-radius: 20px;
+    height: 400px;
+    position: absolute;
+   
+
+}
+.right-big-disc{
+    width: 60%;
+    float: right;
+    margin-top: 4rem;
+}
+.right-big-disc h2{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.right-big-disc h3{
+  font-weight: bold;
+  font-size: 15px;
+}
+.right-big p{
+  margin-top: 10px;
+}
+.right-img-1{
+    position: relative;
+    top: 5;
+    right: 5rem;
+}
+.right-img-1 img{
+    width:250px;
+    border-radius: 20px;
+}
+.right-img-2{
+    position: relative;
+    bottom: 20px;
+}
+.right-img-2 img{
+  width: 200px;
+  border-radius: 20px;
+}
+footer{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+
+}
+.f-left{
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  display: flex;
+  background-color: #f3eae5;
+}

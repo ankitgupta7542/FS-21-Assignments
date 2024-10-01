@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(177, 216, 140);
+            background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg");
+            background-position: center;
+            background-repeat:no-repeat ;
+            background-size: cover;
+        }
+
+        .container {
+            /* border: 2px solid red; */
+            width: 70%;
+            height: 55vh;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            flex-direction: column;
+            /* text-align: center; */
+            /* background-color: rgb(177, 216, 140); */
+            background-color: pink;
+            border-radius: 20px;
+            box-shadow: 5px 5px 4px 4px;
+            padding: 1rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+            h1 {
+                color: green;
+                text-shadow: 1px 1px;
+                font-size: 35px;
+            }
+        }
+
+        #div {
+            font-size: 22px;
+            color: blue;
+            text-shadow: 1px 1px;
+            /* border: 2px solid green; */
+            margin-top: 2rem;
+
+        }
+
+        .animated-btn {
+            background-color: black;
+           /* display: flex; */
+           /* justify-content: center; */
+           /* align-items: center; */
+            border: none;
+            
+            color: white;
+           
+            padding: 15px 32px;
+           
+            text-align: center;
+         
+            text-decoration: none;
+        
+            display: inline-block;
+          
+            font-size: 16px;
+          
+            margin: 4px 2px;
+            
+            cursor: pointer;
+         
+            transition: all 0.4s ease;
+          
+            border-radius: 12px;
+           
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animated-btn:hover {
+            background-color: #da4242;
+            /* Darker green */
+            transform: scale(1.1);
+            /* Slightly increase size */
+        }
+
+        .animated-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            /* background-color: rgba(255, 255, 255, 0.5); */
+            transition: width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease;
+            border-radius: 50%;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        .animated-btn:active::before {
+            width: 0;
+            height: 0;
+            top: 50%;
+            left: 50%;
+        }
+
+        .animated-btn span {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dad Joke Generator</h1>
+        <button id="btn" class="animated-btn">Generate</button>
+
+        <div id="div">
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // let data = fetch("https://official-joke-api.appspot.com/jokes/random");
+        // console.log(data);
+        let div = document.getElementById("div");
+        let btn = document.getElementById("btn");
+
+        function updateUI(data) {
+
+            div.innerHTML = "";
+
+            let innerDiv = document.createElement("p");
+            let innerDiv2 = document.createElement("p")
+            innerDiv.innerHTML =` Setup : ${data.setup}`;
+            innerDiv2.innerHTML = `Punchline : ${data.punchline}`;
+
+            div.appendChild(innerDiv);
+            div.appendChild(innerDiv2);
+
+        }
+
+        async function fetchJoke() {
+            let response = await fetch("https://official-joke-api.appspot.com/jokes/random");
+            let data = await response.json();
+            console.log(data);
+            updateUI(data);
+        }
+        // fetchJoke();
+
+        btn.addEventListener("click", function () {
+            let pending = document.createElement("p");
+            pending.innerHTML = "Joke Loading....";
+            div.appendChild(pending);
+            setTimeout(() => {
+                fetchJoke();
+                // pending.style.display = "none";
+            }, 3000);
+
+        });
+
+    </script>
+</body>
+
+</html>
