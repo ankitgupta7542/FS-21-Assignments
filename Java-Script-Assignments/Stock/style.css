@@ -1,0 +1,254 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f3f4f7, #e3e6ed); /* Soft gradient for a modern look */
+    color: #1e272e; /* Darker shade for body text */
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(45deg, #00a8ff, #9c88ff); /* Vibrant gradient */
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Layout */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* Card Style Sections */
+section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(50% - 20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #273c75; /* Deep blue for headings */
+    font-weight: 600;
+    border-bottom: 3px solid #00a8ff; /* Accent color for header underline */
+    padding-bottom: 5px;
+}
+
+/* Dropdown and Input Styling */
+select, input[type="text"], button {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #dcdde1;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.2s;
+}
+
+select:focus, input[type="text"]:focus {
+    border-color: #00a8ff; /* Focus color */
+    box-shadow: 0 0 8px rgba(0, 168, 255, 0.3);
+}
+
+button {
+    background: linear-gradient(45deg, #00a8ff, #9c88ff);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #007bbd, #8c7ae6); /* Slight change on hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#stockSearch {
+    width: 70%;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Stock Information Section */
+.stock-info #stockDetails {
+    font-size: 1.1rem;
+    color: #2f3640;
+    padding: 15px;
+    line-height: 1.7;
+    border-left: 4px solid #9c88ff;
+    background: #f4f6fa;
+    border-radius: 8px;
+}
+
+/* Graph Section */
+.graph-section {
+    text-align: center;
+    padding: 20px;
+}
+
+#stockChart {
+    width: 100%;
+    max-width: 750px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+/* Stock Table */
+.stock-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.stock-table th, .stock-table td {
+    padding: 16px;
+    text-align: left;
+}
+
+.stock-table th {
+    background: #2d3436; /* Dark header */
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.stock-table tr:nth-child(even) {
+    background-color: #f3f4f6;
+}
+
+.stock-table tr:hover {
+    background-color: #dfe6e9;
+}
+
+.stock-table td {
+    font-size: 1rem;
+    border-bottom: 1px solid #dcdde1;
+}
+
+/* Responsive Design */
+
+/* Tablets and smaller desktops */
+@media (max-width: 1024px) {
+    body {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    #stockSearch {
+        width: 100%;
+    }
+
+    .graph-section {
+        padding: 20px;
+    }
+
+    .stock-table th, .stock-table td {
+        padding: 14px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .search-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #stockSearch {
+        margin-bottom: 10px;
+    }
+
+    .stock-table th, .stock-table td {
+        padding: 10px;
+    }
+
+    #stockChart {
+        height: 300px;
+    }
+}
+
+/* Smaller mobile screens */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    #stockSearch, select, button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #stockChart {
+        height: 250px;
+    }
+
+    .stock-table th, .stock-table td {
+        padding: 8px;
+    }
+}
