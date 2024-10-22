@@ -1,0 +1,113 @@
+/* AnimatedInput.css */
+:root {
+  --primary-color: #6200ea; /* Main color for highlights */
+  --hover-color: rgba(98, 0, 234, 0.8); /* Hover color */
+  --input-bg: rgba(255, 255, 255, 0.9); /* Background for input */
+  --input-focus-bg: #fff; /* Focus background for input */
+  --input-border-color: #6200ea; /* Border color on focus */
+  --input-placeholder-color: #aaa; /* Placeholder color */
+  --button-bg: transparent; /* Initial button background */
+  --button-bg-hover: rgb(61, 106, 255); /* Button hover background */
+  --button-color: #fff; /* Button text color */
+  --button-border-color: rgb(61, 106, 255); /* Button border color */
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.animated-input {
+  width: 300px;
+  padding: 12px 15px;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  outline: none;
+  transition: all 0.4s ease;
+  font-size: 16px;
+  color: #333;
+  background-color: var(--input-bg);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.animated-input::placeholder {
+  color: var(--input-placeholder-color);
+  transition: color 0.4s ease;
+}
+
+/* On focus, the input grows in size, changes border and placeholder color */
+.animated-input:focus {
+  width: 400px;
+  border: 2px solid var(--input-border-color);
+  background-color: var(--input-focus-bg);
+  box-shadow: 0 0 15px var(--hover-color);
+}
+
+.animated-input:focus::placeholder {
+  color: var(--input-border-color);
+}
+
+/* Button Styles */
+button {
+  position: relative;
+  padding: 12px 25px;
+  border-radius: 7px;
+  border: 2px solid var(--button-border-color);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  background: var(--button-bg);
+  color: var(--button-color);
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-left: 2rem;
+}
+
+button:hover {
+  background: var(--button-bg-hover);
+  box-shadow: 0 0 20px 5px rgba(0, 142, 236, 0.6);
+}
+
+button:hover::before {
+  animation: sh02 0.5s forwards; /* Added forwards to keep the end state */
+}
+
+button::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background: #fff;
+  transition: width 0.5s ease; /* Smooth transition for width */
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  0% {
+    opacity: 0;
+    left: 0;
+    width: 0;
+  }
+  50% {
+    opacity: 1;
+    width: 100%;
+  }
+  100% {
+    opacity: 0;
+    left: 100%;
+    width: 0; /* Reset width */
+  }
+}
+
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.2s ease;
+}

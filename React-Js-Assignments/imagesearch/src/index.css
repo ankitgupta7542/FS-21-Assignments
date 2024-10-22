@@ -1,68 +1,96 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Font and Base Styles */
+  --font-family: 'Poppins', sans-serif; /* Updated font for modern look */
+  --line-height: 1.6; /* Increased line height for readability */
+  --font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Color Variables */
+  --text-color-light: rgba(0, 0, 0, 0.87);
+  --text-color-dark: rgba(255, 255, 255, 0.87);
+  --background-color-light: #ffffff;
+  --background-color-dark: #242424;
 
+  /* Colors for elements */
+  --primary-color: #646cff;
+  --hover-color: #535bf2;
+  --button-bg: #1a1a1a;
+  --button-bg-hover: #646cff;
+
+  /* Enhanced rendering */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column; /* Changed to column for better layout */
+  justify-content: center; /* Centering content vertically */
+  align-items: center; /* Centering content horizontally */
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--background-color-dark); /* Dark background */
+  color: var(--text-color-dark); /* Text color */
+  font-family: var(--font-family);
+  line-height: var(--line-height);
 }
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
+  line-height: 1.2;
+  margin-bottom: 1rem; /* Spacing below heading */
+  color: var(--text-color-light); /* Light text color for contrast */
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none; /* No underline by default */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+a:hover {
+  color: var(--hover-color); /* Color on hover */
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  border-radius: 12px; /* Rounded buttons */
+  border: 1px solid transparent; /* No border initially */
+  padding: 0.8em 1.5em; /* Increased padding for better touch targets */
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--button-bg); /* Button background */
+  color: #fff; /* White text for buttons */
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.25s, border-color 0.25s; /* Smooth transitions */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
+
 button:hover {
-  border-color: #646cff;
+  background-color: var(--button-bg-hover); /* Change on hover */
+  border-color: var(--primary-color); /* Border color on hover */
 }
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto var(--primary-color); /* Highlight focus for accessibility */
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--text-color-light); /* Light text color for light mode */
+    background-color: var(--background-color-light); /* Light background */
   }
+
   a:hover {
-    color: #747bff;
+    color: #747bff; /* Lighter hover color for light mode */
   }
+
   button {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Light button background */
+    color: var(--text-color-dark); /* Dark text for button in light mode */
   }
 }
