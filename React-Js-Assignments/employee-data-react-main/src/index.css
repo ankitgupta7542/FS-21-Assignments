@@ -1,84 +1,70 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Existing styles remain unchanged */
+
+.app-container {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  height: 90vh;
+  padding: 20px;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(to right, blue, pink);
+.container {
+  width: 45%; /* Each table takes up nearly half of the width */
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* Elevated shadow */
+  padding: 20px;
+  overflow: hidden; /* Hide overflow for the container */
 }
 
-#root {
+.table {
   width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  border-collapse: collapse;
+  margin-bottom: 15px;
 }
 
-.team-container,
-.employees-container {
-  width: 280px;
-  height: 300px;
-  text-align: center;
-  border: 4px solid black;
-  display: flex;
-  flex-direction: column;
+.table th,
+.table td {
   padding: 10px;
-  overflow-y: auto;
-  position: relative;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for table cells */
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly darker background for cells */
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 10px;
+.table th {
+  background-color: rgba(255, 255, 255, 0.3); /* Header background */
+  color: #333;
+  font-weight: bold;
+}
+
+/* New styles for scrolling */
+.scrollable-table {
+  max-height: 400px; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.table tr:hover {
+  background-color: rgba(255, 255, 255, 0.4); /* Highlight row on hover */
 }
 
 .item {
-  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 10px;
-  background-color: rgb(233, 229, 229);
+  align-items: center;
   margin-bottom: 10px;
 }
 
 .item button {
   border: none;
-  background-color: rgb(60, 120, 239);
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: white;
   cursor: pointer;
-  color: white;
-  padding: 2px 20px;
-  font-size: 12px;
-}
-
-.avg-item {
-  position: sticky;
-  bottom: 0;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.sort-container {
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.sort-container button {
-  border: none;
-  background-color: rgb(228, 104, 202);
-  color: white;
-  font-size: 12px;
-  padding: 2px 15px;
+  padding: 8px 15px;
   border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.item button:hover {
+  background-color: #ff4b2b;
 }
